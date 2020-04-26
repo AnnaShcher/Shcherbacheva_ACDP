@@ -1,0 +1,22 @@
+!! 
+!! Run time parameters for the mcmc run
+!!
+&mcmc
+method = 'dram'
+ nsimu       =2000000   ! length of the chain
+ verbosity   = 0       ! how much to print
+ doadapt     = 1       ! do we adapt
+ adaptint    = 1000     ! intervall for adaptation
+ burnintime  = 10000    ! initial burn in time
+ doburnin    = 1
+ drscale     = 0.0     ! DR scale (0=no DR -delayed rejection- step)
+ badaptint   = -1      ! burn-in adaptation interval, if < 0 use adaptint
+ printint    = 100000     ! interval to print statistics
+ updatesigma = 0       ! update error variance? (1=yes)
+ N0          = 1       ! prior for error variance,
+ S02         = 0       !   1/s^2 ~ Gamma(N0/2,2/N/S02)
+ chainfile   = 'chain.dat'    ! file to save the chain
+ ssfile      = 'sschain.dat'  ! save ssfunction values here
+ s2file      = 's2chain.dat'  ! file to save sigma2 chain
+
+/
